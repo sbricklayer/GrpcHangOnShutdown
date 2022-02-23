@@ -2,14 +2,14 @@
 #define GRPCCLIENT1_H
 
 #include <memory>
-#include "dll3_export.h"
+#include "mydll_export.h"
 
-class DLL3_EXPORT ExampleService2Accessor
+class MYDLL_EXPORT ExampleServiceAccessor
 {
 public:
-  ExampleService2Accessor();
-  ~ExampleService2Accessor();
-  static ExampleService2Accessor& getInstance();
+  ExampleServiceAccessor();
+  ~ExampleServiceAccessor();
+  static ExampleServiceAccessor& getInstance();
   //void callExampleService(); //we could make calls to the gRPC service, but they are not required to demonstrate the infinite block on destruction
 
 private:

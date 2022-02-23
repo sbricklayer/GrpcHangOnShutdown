@@ -13,7 +13,7 @@ add_executable(InfiniteBlockExample ${SOURCES} ${HEADERS})
 
 target_link_libraries(InfiniteBlockExample
     PUBLIC
-        DLL3
+        MyDLL
 )
 
-install(TARGETS InfiniteBlockExample DESTINATION "bin/InfiniteBlock")
+install(TARGETS InfiniteBlockExample DESTINATION "bin")

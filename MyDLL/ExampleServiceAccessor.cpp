@@ -1,7 +1,7 @@
 #include <grpc++/create_channel.h>
-#include "GrpcClient2.h"
+#include "ExampleServiceAccessor.h"
 
-class ExampleService2Accessor::Impl
+class ExampleServiceAccessor::Impl
 {
 
 public:
@@ -17,18 +17,18 @@ private:
   //that the channel object is actually sufficient to trigger the issue.
 };
 
-ExampleService2Accessor::ExampleService2Accessor() : pimpl_(new Impl())
+ExampleServiceAccessor::ExampleServiceAccessor() : pimpl_(new Impl())
 {
 }
 
-ExampleService2Accessor::~ExampleService2Accessor()
+ExampleServiceAccessor::~ExampleServiceAccessor()
 {
   delete pimpl_;
   std::cout << "Destructor ~ExampleService2Accessor\n";
 }
 
-ExampleService2Accessor& ExampleService2Accessor::getInstance()
+ExampleServiceAccessor& ExampleServiceAccessor::getInstance()
 {
-  static ExampleService2Accessor instance;
+  static ExampleServiceAccessor instance;
   return instance;
 }

@@ -12,5 +12,5 @@ set (absl_DIR "${LIBGRPC_DIR}/lib/cmake/absl")
 set (gRPC_DIR "${LIBGRPC_DIR}/lib/cmake/grpc")
 find_package(gRPC CONFIG REQUIRED)
 
-add_subdirectory(InfiniteBlock/DLL3)
-add_subdirectory(InfiniteBlock/InfiniteBlockExample)
+add_subdirectory(MyDLL)
+add_subdirectory(InfiniteBlockExample)
