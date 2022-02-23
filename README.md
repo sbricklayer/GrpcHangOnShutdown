@@ -1,10 +1,10 @@
-# GrpcInDLLsIssues
+# GrpcHangOnShutdown
 
 This repository is supposed to document an issue that was posted in the gRPC github project.
 
 ### Infinite block on shutdown using singleton to access gRPC service
-A DLL provides a singleton of a class that wraps the gRPC service client (using the PIMPL idiom). The executable gets an instance of the singleton (actually nothing happens beyond instantiation of a channel object) and the process blocks indefinitely on shutdown. Although we use DLLs here, (static) gRPC libs are only linked into this one DLL, so no duplicate static gRPC data).
-The result seems to be flaky: If the environment variables GRPC_VERBOSITY=debug and GRPC_TRACE=all are set to enable debugging, the process ends without issues.
+A DLL provides a singleton of a class that wraps the gRPC service client (using the PIMPL idiom). The executable gets an instance of the singleton (actually nothing happens beyond instantiation of a channel object) and the process blocks indefinitely on shutdown. Although we use a DLL here, the (static) gRPC libs are only linked into this one DLL (so no duplicate static gRPC data).
+The result seems to be unstable: If the environment variables GRPC_VERBOSITY=debug and GRPC_TRACE=all are set to enable debugging, the process ends without issues.
 
 ## Build
 The project as well as gRCP were built with Visual Studio 2019.
